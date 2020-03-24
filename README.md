@@ -40,7 +40,7 @@ There are also other helper commands such as:
 * list - lists availble connectors on the kafka connect cluster
 * delete - will delete the connectors that would have been generated from the config provided to this tool
 * describe - will describe a connector, its status etc.
-* restart - will restart a specific connector or onnectors that would have been generated from the config provided to this tool
+* restart [TODO] - will restart a specific connector or onnectors that would have been generated from the config provided to this tool
 
 ## Maintainers
 * Pritesh Patel
