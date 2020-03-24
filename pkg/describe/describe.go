@@ -2,7 +2,7 @@ package describe
 
 import (
 	"encoding/json"
-	"github.com/commitdev/kafka-connect-cli/pkg/client"
+	"github.com/commitdev/kafka-connect/pkg/client"
 	"github.com/tidwall/pretty"
 )
 

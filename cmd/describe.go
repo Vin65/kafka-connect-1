@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"errors"
-	"github.com/commitdev/kafka-connect-cli/pkg/describe"
+	"github.com/commitdev/kafka-connect/pkg/describe"
 	"github.com/spf13/cobra"
 	"log"
 )

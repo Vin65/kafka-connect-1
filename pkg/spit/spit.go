@@ -2,7 +2,7 @@ package spit
 
 import (
 	"encoding/json"
-	"github.com/commitdev/kafka-connect-cli/config"
+	"github.com/commitdev/kafka-connect/config"
 	"github.com/k0kubun/pp"
 	"github.com/tidwall/pretty"
 )

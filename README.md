@@ -11,7 +11,7 @@ This helps:
 
 You can install this cli by running the following command:
 ```
-    go get github.com/commitdev/kafka-connect-cli
+    go get github.com/commitdev/kafka-connect
 ```
 
 ## Configuration

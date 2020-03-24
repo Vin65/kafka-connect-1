@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/commitdev/kafka-connect-cli/config"
-	"github.com/commitdev/kafka-connect-cli/pkg/utils"
+	"github.com/commitdev/kafka-connect/config"
+	"github.com/commitdev/kafka-connect/pkg/utils"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -117,7 +117,7 @@ func (c *kafkaConnectHTTPClient) Get(name string) (*KafkaConnectGetResponse, err
 	return &result, nil
 }
 
-type KafkaConnectGetStatusResponse  struct {
+type KafkaConnectGetStatusResponse struct {
 	Name      string `json:"name"`
 	Connector struct {
 		State    string `json:"state"`

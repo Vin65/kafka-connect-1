@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/commitdev/kafka-connect-cli/pkg/spit"
+	"github.com/commitdev/kafka-connect/pkg/spit"
 	"github.com/spf13/cobra"
 )
 
