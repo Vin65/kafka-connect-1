@@ -1,0 +1,105 @@
+[
+  {
+    "name": "data1-shard1-v1",
+    "config": {
+      "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
+      "database.dbname": "shard1",
+      "database.history.kafka.bootstrap.servers": "local-kafka-kafka-bootstrap:9092",
+      "database.history.kafka.topic": "data-migration",
+      "database.hostname": "localhost",
+      "database.password": "${file:/opt/kafka/external-configuration/connector-secrets/migration-db.properties:dbPassword}",
+      "database.port": 1433,
+      "database.server.name": "shard1",
+      "database.user": "${file:/opt/kafka/external-configuration/connector-secrets/migration-db.properties:dbUsername}",
+      "key.converter": "io.confluent.connect.avro.AvroConverter",
+      "key.converter.schema.registry.url": "http://schema-registry-api:8081",
+      "snapshot.mode": "initial",
+      "table.whitelist": "data1",
+      "tasks.max": 1,
+      "transforms": "Reroute",
+      "transforms.Reroute.topic.regex": "(.*)",
+      "transforms.Reroute.topic.replacement": "data1",
+      "transforms.Reroute.type": "io.debezium.transforms.ByLogicalTableRouter",
+      "value.converter": "io.confluent.connect.avro.AvroConverter",
+      "value.converter.schema.registry.url": "http://schema-registry-api:8081"
+    }
+  },
+  
+  {
+    "name": "data2-shard1-v1",
+    "config": {
+      "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
+      "database.dbname": "shard1",
+      "database.history.kafka.bootstrap.servers": "local-kafka-kafka-bootstrap:9092",
+      "database.history.kafka.topic": "data-migration",
+      "database.hostname": "localhost",
+      "database.password": "${file:/opt/kafka/external-configuration/connector-secrets/migration-db.properties:dbPassword}",
+      "database.port": 1433,
+      "database.server.name": "shard1",
+      "database.user": "${file:/opt/kafka/external-configuration/connector-secrets/migration-db.properties:dbUsername}",
+      "key.converter": "io.confluent.connect.avro.AvroConverter",
+      "key.converter.schema.registry.url": "http://schema-registry-api:8081",
+      "snapshot.mode": "initial",
+      "table.whitelist": "data2",
+      "tasks.max": 1,
+      "transforms": "Reroute",
+      "transforms.Reroute.topic.regex": "(.*)",
+      "transforms.Reroute.topic.replacement": "data2",
+      "transforms.Reroute.type": "io.debezium.transforms.ByLogicalTableRouter",
+      "value.converter": "io.confluent.connect.avro.AvroConverter",
+      "value.converter.schema.registry.url": "http://schema-registry-api:8081"
+    }
+  },
+  
+  {
+    "name": "data1-shard2-v1",
+    "config": {
+      "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
+      "database.dbname": "shard2",
+      "database.history.kafka.bootstrap.servers": "local-kafka-kafka-bootstrap:9092",
+      "database.history.kafka.topic": "data-migration",
+      "database.hostname": "localhost2",
+      "database.password": "${file:/opt/kafka/external-configuration/connector-secrets/migration-db.properties:dbPassword}",
+      "database.port": 1433,
+      "database.server.name": "shard2",
+      "database.user": "${file:/opt/kafka/external-configuration/connector-secrets/migration-db.properties:dbUsername}",
+      "key.converter": "io.confluent.connect.avro.AvroConverter",
+      "key.converter.schema.registry.url": "http://schema-registry-api:8081",
+      "snapshot.mode": "initial",
+      "table.whitelist": "data1",
+      "tasks.max": 1,
+      "transforms": "Reroute",
+      "transforms.Reroute.topic.regex": "(.*)",
+      "transforms.Reroute.topic.replacement": "data1",
+      "transforms.Reroute.type": "io.debezium.transforms.ByLogicalTableRouter",
+      "value.converter": "io.confluent.connect.avro.AvroConverter",
+      "value.converter.schema.registry.url": "http://schema-registry-api:8081"
+    }
+  },
+  
+  {
+    "name": "data2-shard2-v1",
+    "config": {
+      "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
+      "database.dbname": "shard2",
+      "database.history.kafka.bootstrap.servers": "local-kafka-kafka-bootstrap:9092",
+      "database.history.kafka.topic": "data-migration",
+      "database.hostname": "localhost2",
+      "database.password": "${file:/opt/kafka/external-configuration/connector-secrets/migration-db.properties:dbPassword}",
+      "database.port": 1433,
+      "database.server.name": "shard2",
+      "database.user": "${file:/opt/kafka/external-configuration/connector-secrets/migration-db.properties:dbUsername}",
+      "key.converter": "io.confluent.connect.avro.AvroConverter",
+      "key.converter.schema.registry.url": "http://schema-registry-api:8081",
+      "snapshot.mode": "initial",
+      "table.whitelist": "data2",
+      "tasks.max": 1,
+      "transforms": "Reroute",
+      "transforms.Reroute.topic.regex": "(.*)",
+      "transforms.Reroute.topic.replacement": "data2",
+      "transforms.Reroute.type": "io.debezium.transforms.ByLogicalTableRouter",
+      "value.converter": "io.confluent.connect.avro.AvroConverter",
+      "value.converter.schema.registry.url": "http://schema-registry-api:8081"
+    }
+  }
+]
