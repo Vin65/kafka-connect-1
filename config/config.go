@@ -6,8 +6,11 @@ import (
 	"github.com/jinzhu/configor"
 )
 
-const DBName = "database.dbname"
-const TableName = "table.whitelist"
+const (
+	DBName       = "database.dbname"
+	TableName    = "table.whitelist"
+	HistoryTopic = "database.history.kafka.topic"
+)
 
 type KafkaConnectorConfigInstance map[string]interface{}
 
@@ -42,6 +45,8 @@ func (c *KafkaConnectorConfig) MergeAll() []KafkaConnectorConfigWrapper {
 			dbName := db[DBName]
 			tableName := table[TableName]
 			connectorName := fmt.Sprintf("%s-%s-v%s", tableName, dbName, c.Version)
+
+			configInstance[HistoryTopic] = connectorName
 
 			wrap := KafkaConnectorConfigWrapper{
 				Name:   connectorName,
