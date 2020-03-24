@@ -27,7 +27,7 @@ The configuration under each layer uses the standard kafka connect configuration
 ## Quick start
 In order to use tool you must first define a configuration, you can find an example of this in example/kafka-connect.yaml. Once this is done you can now run:
 ```
-    # user / pass are optional - if used they are appened in basic auth headers (-u & -p)
+    # user / pass are optional - if used they are appended in basic auth headers (-u & -p)
 
     # Spits out what the configuration that would applied would look like
     kafka-connect -a KAFKA_CONNECT_ADDRESS spit -c kafka-connect.yaml
