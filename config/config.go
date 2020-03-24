@@ -46,7 +46,7 @@ func (c *KafkaConnectorConfig) MergeAll() []KafkaConnectorConfigWrapper {
 			tableName := table[TableName]
 			connectorName := fmt.Sprintf("%s-%s-v%s", tableName, dbName, c.Version)
 
-			configInstance["database.history.kafka.topic"] = connectorName
+			configInstance[HistoryTopic] = connectorName
 
 			wrap := KafkaConnectorConfigWrapper{
 				Name:   connectorName,
