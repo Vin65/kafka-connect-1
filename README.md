@@ -24,6 +24,8 @@ The configuration works in 'layers'. There are 3 defined layers:
 
 The configuration under each layer uses the standard kafka connect configuration. The only custom configuration is the 'version' this is attached to each connector name. The connector name format will be `TABLE-DATABASE-VERSION`. Example configuration can be found in the example directory.
 
+NOTE: As each kafka history topic needs to be unique per connector, the topic will automatically be named the same as the kafka connector name.
+
 ## Quick start
 In order to use tool you must first define a configuration, you can find an example of this in example/kafka-connect.yaml. Once this is done you can now run:
 ```
